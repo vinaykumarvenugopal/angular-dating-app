@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace API.Entities
 {
-    public class Department : BaseEntity 
+    public class BaseEntity
     {
-        public string Name { get; set; }
+        public int Id { get; set; }
     }
 }
