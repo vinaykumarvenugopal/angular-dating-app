@@ -1,5 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { DepartmentComponent } from "./department/department.component";
+import { EmployeeComponent } from "./employee/employee.component";
 
 
 import { NotFoundComponent } from "./errors/not-found.component";
@@ -29,6 +31,8 @@ const routes: Routes = [
   {path: 'errors', component: TestErrorsComponent},
   {path: 'not-found', component: NotFoundComponent},
   {path: 'server-error', component: ServerErrorComponent},
+  { path: 'employee', component: EmployeeComponent },
+  { path: 'department', component: DepartmentComponent },
   {path: '**', component: NotFoundComponent, pathMatch: 'full'},
 ];
 

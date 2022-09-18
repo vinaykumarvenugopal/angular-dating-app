@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { MemberListComponent } from './members/member-list/member-list.component';
@@ -18,6 +18,12 @@ import { TestErrorsComponent } from './errors/test-errors.component';
 import { NotFoundComponent } from './errors/not-found.component';
 import { ServerErrorComponent } from './errors/server-error.component';
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
+import { DepartmentComponent } from './department/department.component';
+import { AddEditDepartmentComponent } from './department/add-edit-department/add-edit-department.component';
+import { ShowDepartmentComponent } from './department/show-department/show-department.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { AddEditEmployeeComponent } from './employee/add-edit-employee/add-edit-employee.component';
+import { ShowEmployeeComponent } from './employee/show-employee/show-employee.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +37,13 @@ import { ErrorInterceptor } from './_interceptors/error.interceptor';
     MessagesComponent,
     TestErrorsComponent,
     NotFoundComponent,
-    ServerErrorComponent
+    ServerErrorComponent,
+    DepartmentComponent,
+    AddEditDepartmentComponent,
+    ShowDepartmentComponent,
+    EmployeeComponent,
+    AddEditEmployeeComponent,
+    ShowEmployeeComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +51,7 @@ import { ErrorInterceptor } from './_interceptors/error.interceptor';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     SharedModule,
   ],
   providers: [
