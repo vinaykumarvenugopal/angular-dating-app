@@ -24,6 +24,8 @@ import { ShowDepartmentComponent } from './department/show-department/show-depar
 import { EmployeeComponent } from './employee/employee.component';
 import { AddEditEmployeeComponent } from './employee/add-edit-employee/add-edit-employee.component';
 import { ShowEmployeeComponent } from './employee/show-employee/show-employee.component';
+import { MemberCardComponent } from './members/member-card/member-card.component';
+import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { ShowEmployeeComponent } from './employee/show-employee/show-employee.co
     ShowDepartmentComponent,
     EmployeeComponent,
     AddEditEmployeeComponent,
-    ShowEmployeeComponent
+    ShowEmployeeComponent,
+    MemberCardComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ import { ShowEmployeeComponent } from './employee/show-employee/show-employee.co
     SharedModule,
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
   ],
   bootstrap: [AppComponent],
 })

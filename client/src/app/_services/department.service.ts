@@ -1,13 +1,14 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DepartmentService {
 
-  readonly apiUrl = 'https://localhost:5001/api/';
+  readonly apiUrl = environment.apiUrl;
 
 
   constructor(private http: HttpClient) { }
