@@ -26,6 +26,9 @@ import { AddEditEmployeeComponent } from './employee/add-edit-employee/add-edit-
 import { ShowEmployeeComponent } from './employee/show-employee/show-employee.component';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { LoadingInterceptor } from './_interceptors/loading.interceptor';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,8 @@ import { JwtInterceptor } from './_interceptors/jwt.interceptor';
     EmployeeComponent,
     AddEditEmployeeComponent,
     ShowEmployeeComponent,
-    MemberCardComponent
+    MemberCardComponent,
+    MemberEditComponent
   ],
   imports: [
     BrowserModule,
@@ -56,10 +60,12 @@ import { JwtInterceptor } from './_interceptors/jwt.interceptor';
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
+    NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' })
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}
   ],
   bootstrap: [AppComponent],
 })
